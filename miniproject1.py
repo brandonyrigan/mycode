@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-## See if your roll hits the monster!
+""" See if your roll hits the monster! """
 
 import random
 
 def main():
+    """Main program"""
     ## Intro and game description
     print("Welcome to Attack the Monster!")
     print("You will get 5 chances to hit the monster to defeat it. The monster has 10hp total.")
     print("Each correct guess will damage the monster for 5hp and you gain an extra try.")
     print("Choose wisely")
     print()
-    
     ## Create a choice array for user to choose from
     choices = [1, 2, 3, 4, 5, 6, 7, 8]
 
@@ -26,8 +26,7 @@ def main():
     ## else if monster hp is 0, user wins game
     while monster_hp > 0:
         try:
-            user_guess = int(input("Choose a number between 1 and 8 to see if you hit the monster!: "))
-        
+            user_guess = int(input("Choose a # between 1 and 8 to see if you hit the monster!: "))
             if user_guess > 8 or user_guess < 1:
                 print("Please choose a number between 1 and 8")
                 continue
@@ -49,7 +48,6 @@ def main():
                 print(f"Sorry, you didn't hit. You have {tries} tries left.")
         except ValueError as err:
             print("That was not a legal value for division:", err)
-
     print("Exiting program.")
 
 if __name__ == "__main__":
