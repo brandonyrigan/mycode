@@ -1,0 +1,28 @@
+{
+    "Hall" : {
+        "south": "Kitchen",
+        "east": "Dining Room",
+        "item": "key"
+    },
+
+    "Kitchen": {
+        "north": "Hall",
+        "'item": "monster"
+    },
+
+    "Dining Room": {
+        "west": "Hall",
+        "north": "Bathroom",
+        "item": "potion",
+        "south": "Garden"
+    },
+
+    "Garden": {
+        "north": "Dining Room"
+    },
+
+    "Bathroom": {
+        "south": "Dining Room"
+    }
+
+}
