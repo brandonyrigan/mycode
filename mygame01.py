@@ -20,13 +20,19 @@ def showStatus():
     # print the player's current location
     print('---------------------------')
     print('You are in the ' + currentRoom)
+    print(rooms[currentRoom]["description"])
     # print what the player is carrying
     print('Inventory:', inventory)
+    # print how many moves the player has made
+    print("Moves:", move_count)
     # check if there's an item in the room, if so print it
     if "item" in rooms[currentRoom]:
       print('You see a ' + rooms[currentRoom]['item'])
+      print(rooms[currentRoom]["item_description"])
     print("---------------------------")
 
+# how many moves the player has made
+move_count = 0
 
 # an inventory, which is initially empty
 inventory = []
@@ -57,6 +63,8 @@ while True:
 
     #if they type 'go' first
     if move[0] == 'go':
+        # increment the move counter
+        move_count += 1
         #check that they are allowed wherever they want to go
         if move[1] in rooms[currentRoom]:
             #set the current room to the new room
@@ -84,11 +92,16 @@ while True:
 
     # if a player enters room with a monster
     if 'item' in rooms[currentRoom] and 'monster' in rooms[currentRoom]['item']:
-        print("A monster has got you.. GAME OVER!")
-        break
+        if move[0] == "dance":
+            print("The monster hates dancing! You scared it away! YOU WIN!")
+            break
+        elif move[0] == "fight":
+            print("Why did you try fighting it?! You lost")
+            break
 
     ## Define how a player can win
     if currentRoom == 'Garden' and 'key' in inventory and 'potion' in inventory:
         print('You escaped the house with the ultra rare key and magic potion... YOU WIN!')
+        if (move_count == 2):
+            print("You also took the shortest route! Congrats!")
         break
-

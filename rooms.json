@@ -1,28 +1,51 @@
 {
     "Hall" : {
+        "description": "a long creepy hall",
         "south": "Kitchen",
         "east": "Dining Room",
-        "item": "key"
+        "item": "key",
+        "item_description": "a giant golden key.. might be useful!"
     },
 
     "Kitchen": {
+        "description": "a fancy gourment kitchen.. where's the chef?",
         "north": "Hall",
-        "'item": "monster"
+        "item": "monster",
+        "item_description": "Oh no a monster! Do you fight it or challenge it to a dance battle!?"
     },
 
     "Dining Room": {
+        "description": "there's a big table in the middle. looks like it can hold a feast for 12",
         "west": "Hall",
         "north": "Bathroom",
         "item": "potion",
+        "item_description": "a fancy looking potion.. I wonder what it does",
         "south": "Garden"
     },
 
     "Garden": {
+        "description": "lovely looking garden filled with roses",
         "north": "Dining Room"
     },
 
     "Bathroom": {
-        "south": "Dining Room"
+        "description": "just a normal looking bathroom",
+        "south": "Dining Room",
+        "item": "toothbrush",
+        "item_description": "a toothbrush? seems kind of useless"
+    },
+
+    "Basement": {
+        "description": "wow it's dark in here",
+        "south": "Hall",
+        "north": "Secret Room"
+    },
+
+    "Secret Room": {
+        "description": "looks like someone didn't want this room to be found.",
+        "south": "Basement",
+        "item": "gold",
+        "item_description": "gold coins! I'll be rich!"
     }
 
 }
