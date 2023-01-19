@@ -9,8 +9,6 @@ def main():
 
     # data will be a python dictionary rendered from your API link's JSON!
     data= requests.get(URL).json()
-
-    print(data)
     
     ## loop through results
     for question in data["results"]:
